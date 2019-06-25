@@ -10,6 +10,7 @@
     "dev": "nodemon src/index.js"
   },
   "dependencies": {
+    "bad-words": "^3.0.2",
     "config": "^3.1.0",
     "express": "^4.17.1",
     "mongoose": "^5.6.1",
