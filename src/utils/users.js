@@ -27,8 +27,20 @@ const addUser = ({ id, username, room }) => {
   return { user };
 };
 
-addUser({ id: 22, username: "df", room: "eejf" });
-const yo = addUser({ id: 22, username: "df", room: "eejf" });
+const removeUser = id => {
+  const index = users.findIndex(user => user.id === id);
 
-console.log(users);
-console.log(yo);
+  if (index !== -1) {
+    return users.splice(index, 1)[0];
+  }
+};
+
+const getUser = id => {
+  return users.find(user => user.id === id);
+};
+
+const getUsersInRoom = room => {
+  return users.filter(user => user.room === room);
+};
+
+module.exports = { addUser, removeUser, getUser, getUsersInRoom };
